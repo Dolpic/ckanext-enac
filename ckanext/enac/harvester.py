@@ -2,7 +2,7 @@
 from ckan.plugins.core import SingletonPlugin, implements
 from ckanext.harvest.model import HarvestObject
 from ckanext.harvest.interfaces import IHarvester
-from .base import HarvesterBase
+from ckanext.harvest.harvesters import HarvesterBase
 import os
 
 class EnacHarvester(HarvesterBase):
