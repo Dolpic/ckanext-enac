@@ -55,6 +55,7 @@ class EnacHarvester(HarvesterBase):
     :param harvest_job: HarvestJob object
     :returns: A list of HarvestObject ids
     '''
+    print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAa")
     log.debug("In gather stage: %s" % harvest_job.source.url)
     objs_ids = []
     counter = 0
@@ -64,7 +65,7 @@ class EnacHarvester(HarvesterBase):
         content = {
           "name" : "nom"
         }
-        print(os.path.join(subdir, file))
+
         obj = HarvestObject(guid=harvest_job.source.url+str(counter),
                             job=harvest_job,
                             content=json.dumps(content))
