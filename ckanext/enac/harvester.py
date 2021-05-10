@@ -63,6 +63,9 @@ class EnacHarvester(HarvesterBase):
 
     for subdir, dirs, files in os.walk(harvest_job.source.url):
       for file in files:
+
+        log.info("Added file : "+str(file))
+
         content = {
           "name" : "nom"
         }
@@ -75,6 +78,7 @@ class EnacHarvester(HarvesterBase):
 
         counter = counter + 1
 
+    log.info("Gather stage finished")
     return objs_ids
 
 
