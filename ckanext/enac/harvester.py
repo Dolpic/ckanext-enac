@@ -56,7 +56,7 @@ class EnacHarvester(HarvesterBase):
     :param harvest_job: HarvestJob object
     :returns: A list of HarvestObject ids
     '''
-    f.write("In gather stage")
+    logFile.write("In gather stage")
     log.info("In gather stage: %s" % harvest_job.source.url)
     objs_ids = []
     counter = 0
@@ -97,7 +97,7 @@ class EnacHarvester(HarvesterBase):
               all, False if not successful
     '''
     log.info("In fetch stage")
-    f.write("In fetch stage")
+    logFile.write("In fetch stage")
     return True
 
   def import_stage(self, harvest_object):
@@ -127,7 +127,7 @@ class EnacHarvester(HarvesterBase):
               need harvesting after all or False if there were errors.
     '''
     log.info("In import stage")
-    f.write("In import stage")
+    logFile.write("In import stage")
     log.info("content" + str(harvest_object.content))
     package_dict = json.loads(harvest_object.content)
     result = self._create_or_update_package(package_dict, harvest_object, package_dict_form='package_show')
