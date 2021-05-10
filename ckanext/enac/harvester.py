@@ -8,7 +8,7 @@ import os
 import logging
 
 log = logging.getLogger(__name__)
-logFile =  open("~/output.txt", "a")
+logFile = open("output.txt", "a")
 
 class EnacHarvester(HarvesterBase):
 
