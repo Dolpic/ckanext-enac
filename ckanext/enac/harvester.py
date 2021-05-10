@@ -3,7 +3,11 @@ from ckan.plugins.core import SingletonPlugin, implements
 from ckanext.harvest.model import HarvestObject
 from ckanext.harvest.interfaces import IHarvester
 from ckanext.harvest.harvesters import HarvesterBase
+
 import os
+import logging
+
+log = logging.getLogger(__name__)
 
 class EnacHarvester(HarvesterBase):
 
