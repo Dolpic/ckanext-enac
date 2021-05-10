@@ -1,5 +1,6 @@
  
 from ckan.plugins.core import SingletonPlugin, implements
+from ckan.lib.helpers import json
 from ckanext.harvest.model import HarvestObject
 from ckanext.harvest.interfaces import IHarvester
 from ckanext.harvest.harvesters import HarvesterBase
