@@ -68,7 +68,7 @@ class EnacHarvester(HarvesterBase):
 
         counter = counter + 1
 
-    return object_ids
+    return objs_ids
 
 
   def fetch_stage(self, harvest_object):
