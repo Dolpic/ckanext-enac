@@ -86,7 +86,7 @@ class EnacHarvester(HarvesterBase):
           "id" : str(root),
           "owner_org" : 'enac',
           "private" : False,
-          "name" : "nom",
+          "name" : str(root),
           "resources" : resources
         }
 
