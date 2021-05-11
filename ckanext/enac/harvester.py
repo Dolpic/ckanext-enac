@@ -152,6 +152,7 @@ class EnacHarvester(HarvesterBase):
     logFile.write("In import stage")
     log.info("content" + str(harvest_object.content))
     package_dict = json.loads(harvest_object.content)
+    log.info("Name : "+ str(package_dict["name"]))
     result = self._create_or_update_package(package_dict, harvest_object, package_dict_form='package_show')
     return result
 
