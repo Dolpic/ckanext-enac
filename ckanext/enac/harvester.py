@@ -79,25 +79,24 @@ class EnacHarvester(HarvesterBase):
           'url': 'undefined'
         })
 
-      #if(len(resources) > 0):
 
-        
+      if(len(files) > 0):
 
-      content = {
-        "id" : str(root),
-        "owner_org" : 'enac',
-        "private" : False,
-        "name" : "nom",
-        "resources" : resources
-      }
+        content = {
+          "id" : str(root),
+          "owner_org" : 'enac',
+          "private" : False,
+          "name" : "nom",
+          "resources" : resources
+        }
 
-      obj = HarvestObject(guid=harvest_job.source.url+str(counter),
-                          job=harvest_job,
-                          content=json.dumps(content))
-      obj.save()
-      objs_ids.append(obj.id)
+        obj = HarvestObject(guid=harvest_job.source.url+str(counter),
+                            job=harvest_job,
+                            content=json.dumps(content))
+        obj.save()
+        objs_ids.append(obj.id)
 
-      counter = counter + 1
+        counter = counter + 1
 
     log.info("Gather stage finished")
     return objs_ids
