@@ -64,7 +64,7 @@ class EnacHarvester(HarvesterBase):
 
     for root, dirs, files in os.walk(harvest_job.source.url):
 
-      ressources = []
+      resources = []
 
       for file in files:
 
@@ -83,7 +83,7 @@ class EnacHarvester(HarvesterBase):
         "owner_org" : 'enac',
         "private" : False,
         "name" : "nom",
-        "ressources" : resources
+        "resources" : resources
       }
 
       obj = HarvestObject(guid=harvest_job.source.url+str(counter),
