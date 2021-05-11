@@ -68,7 +68,7 @@ class EnacHarvester(HarvesterBase):
         log.info("Added file : "+str(file))
 
         content = {
-          "id" : file,
+          "id" : str(file),
           "name" : "nom"
         }
 
