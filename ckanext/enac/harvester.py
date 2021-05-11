@@ -83,8 +83,7 @@ class EnacHarvester(HarvesterBase):
           "id" : str(root),
           "owner_org" : 'enac',
           "private" : False,
-          "name" : "nom",
-          "resources" : resources
+          "name" : "nom"
         }
 
         obj = HarvestObject(guid=harvest_job.source.url+str(counter),
