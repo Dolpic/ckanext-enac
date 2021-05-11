@@ -62,28 +62,41 @@ class EnacHarvester(HarvesterBase):
     objs_ids = []
     counter = 0
 
-    for subdir, dirs, files in os.walk(harvest_job.source.url):
+    for root, dirs, files in os.walk(harvest_job.source.url):
+
+      ressources = []
+
       for file in files:
 
-        log.info("Added file : "+str(file))
+        resources.append({
+          'name': str(file),
+          'resource_type': 'HTML',
+          'format': 'HTML',
+          'url': 'undefined'
+        })
 
-        content = {
-          "id" : str(file),
-          "owner_org" : 'enac',
-          "private" : False,
-          "name" : "nom"
-        }
 
-        obj = HarvestObject(guid=harvest_job.source.url+str(counter),
-                            job=harvest_job,
-                            content=json.dumps(content))
-        obj.save()
-        objs_ids.append(obj.id)
+      log.info("Added folder : "+str(root))
 
-        counter = counter + 1
+      content = {
+        "id" : str(root),
+        "owner_org" : 'enac',
+        "private" : False,
+        "name" : "nom",
+        "ressources" : resources
+      }
+
+      obj = HarvestObject(guid=harvest_job.source.url+str(counter),
+                          job=harvest_job,
+                          content=json.dumps(content))
+      obj.save()
+      objs_ids.append(obj.id)
+
+      counter = counter + 1
 
     log.info("Gather stage finished")
     return objs_ids
+
 
 
   def fetch_stage(self, harvest_object):
