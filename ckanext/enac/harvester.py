@@ -69,6 +69,8 @@ class EnacHarvester(HarvesterBase):
 
         content = {
           "id" : str(file),
+          "owner_org" : 'enac',
+          "private" : False,
           "name" : "nom"
         }
 
